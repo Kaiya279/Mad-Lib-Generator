@@ -1,0 +1,92 @@
+# Mad Libs Generator 
+class story():
+
+    def play_game(self,loop):
+        self.loop=loop
+        
+        while True:
+            if (loop == 'Y'):
+              
+                 #Story 1
+                user_input = input("Choose 1: noun --> 2: Plural Noun -->3: Noun --> 4:Place --> 5:Adjective --> 6:Noun ")
+                list1  = user_input.split()
+                #Story 2
+               
+                before_game = '" __________ !" he said _________ as he jumped into his convertible __________ and drove off with this _________ wife'
+                print("\n\nBEFORE\n\n",before_game)
+                game1 = "Be kind to your",list1[0],"- footed", list1[1],"For a duck may be somebody's", list1[2],"Be kind to your",list1[0],"in",list1[3],"Where the weather is always",list1[4],". You may think that is this the",list1[5],",Well it is.".format(list1)
+                print("\n\nAFTER\n\n",game1,"\n\n")
+                break
+                  
+            elif(loop == 'Next'):
+                
+                
+                user_input2 = input("Choose 1: Exclamation --> 2: Adverb -->3: Noun --> 4: Adjective")
+                list2  = user_input2.split()
+                #Story 2
+                
+                before_game = '" __________ !" he said _________ as he jumped into his convertible __________ and drove off with this _________ wife'
+       
+                print("\n\nBEFORE\n",before_game)
+                game2 = '"',list2[0],'!"',"he said", list2[1],"as he jumped into his convertible", list2[2],"and drove off with this",list2[3],"wife".format(list2)
+                print("\n\nAFTER\n\n",game2,"\n\n")
+                break
+                
+              
+print("Intsruction \nEnter exit to exit the game")
+play = input("Would you like to play Y/N ")
+loop = 'Y' 
+while True:
+  
+    if(loop == 'Y'):
+      
+        
+        # All the questions that the program asks the user
+        print("Choose words in given sequential order")
+        my_classifier = story()
+        
+        my_classifier.play_game(loop)
+        # User choice whether they want to play the same game or new game
+        choice = input("Would you like to play again, Press Y and Press 'N' for new  ")
+        
+        #if user want to play same again
+        if(choice == 'Y'):
+            loop == 'Y'
+            continue
+        #User want to play new
+        elif(choice == 'N'):
+        #when user want to play new , each time we change the value of loop according to our story   
+            loop = 'Next'
+            
+            
+        else:
+            loop = 'exit'
+            
+  
+    elif(loop == 'Next'):
+        
+        # All the questions that the program asks the user
+        print("Choose words in given sequential order")
+        my_classifier = story()
+        
+        my_classifier.play_game(loop)
+        # User choice whether they want ot play the same game or new game
+        choice = input("Would you like to play again, Press Y and Press 'N' for new  ")
+        #if user want to play same again
+        if(choice == 'Y'):
+            loop == 'Y'
+            continue
+        elif(choice == 'N'):
+        #when user want to play new , for future story appended the loop i.e loop =Next1 for new story     
+            loop = 'Next1'
+            
+            
+        else:
+            loop = 'exit'
+            
+            
+    elif(loop == 'exit'):
+        
+        print("Thanks for playing")
+        break
+    continue
